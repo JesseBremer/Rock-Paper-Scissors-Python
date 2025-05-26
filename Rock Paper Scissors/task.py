@@ -33,7 +33,8 @@ game_choices.extend([rock, paper, scissors])
 user_score = 0
 cpu_score = 0
 
-while user_score or cpu_score < 3:
+# Win Condition
+while user_score != 3 and cpu_score != 3:
     print(f"User Score: {user_score}. CPU score: {cpu_score}.")
     user_selection = int(input("Choose your weapon: 0 - Rock, 1 - Paper, 2 - Scissors!\n"))
     cpu_selection = random.choice(game_choices)
@@ -89,7 +90,8 @@ while user_score or cpu_score < 3:
         print("You Win!")
         user_score += 1
 
-if user_score == 3:
-    print(f"You won: {user_score} - {cpu_score}.")
-else:
-    print(f"You lost: {user_score}- {cpu_score}.")
+    if user_score == 3 or cpu_score == 3:
+        if user_score == 3:
+            print(f"You won: {user_score} - {cpu_score}.")
+        else:
+            print(f"You lost: {user_score} - {cpu_score}.")
