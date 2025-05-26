@@ -32,27 +32,50 @@ scissors = '''
 game_choices.extend([rock, paper, scissors])
 
 
-# compare against
-# decide winner
-
 user_selection = int(input("Choose your weapon: 0 - Rock, 1 - Paper, 2 - Scissors!\n"))
 cpu_selection = random.choice(game_choices)
 cpu_selection_index = game_choices.index(cpu_selection)
 
 
 # Game Logic
-# Rock
-if user_selection == cpu_selection:
+# Tie Game
+if user_selection == cpu_selection_index:
     print(game_choices[user_selection])
     print("Computer Chose:")
     print(cpu_selection)
     print("It's a tie.")
-elif user_selection == 0 and cpu_selection == game_choices[1]:
+
+# Rock Conditions
+if user_selection == 0 and cpu_selection_index == 1:
     print(game_choices[user_selection])
     print("Computer Chose:")
     print(cpu_selection)
     print("You Lose.")
-elif user_selection == 0 and cpu_selection == game_choices[2]:
+elif user_selection == 0 and cpu_selection_index == 2:
+    print(game_choices[user_selection])
+    print("Computer Chose:")
+    print(cpu_selection)
+    print("You Win!")
+
+# Paper Conditions
+if user_selection == 1 and cpu_selection_index == 2:
+    print(game_choices[user_selection])
+    print("Computer Chose:")
+    print(cpu_selection)
+    print("You Lose.")
+elif user_selection == 1 and cpu_selection_index == 0:
+    print(game_choices[user_selection])
+    print("Computer Chose:")
+    print(cpu_selection)
+    print("You Win!")
+
+#Scissor Conditions
+if user_selection == 2 and cpu_selection_index == 0:
+    print(game_choices[user_selection])
+    print("Computer Chose:")
+    print(cpu_selection)
+    print("You Lose.")
+elif user_selection == 2 and cpu_selection_index == 1:
     print(game_choices[user_selection])
     print("Computer Chose:")
     print(cpu_selection)
