@@ -1,3 +1,7 @@
+import random
+
+game_choices = []
+
 rock = '''
     _______
 ---'   ____)
@@ -24,3 +28,17 @@ scissors = '''
       (____)
 ---.__(___)
 '''
+
+get user choice
+get computer choice
+compare against
+decide winner
+
+
+
+game_choices.extend([rock, paper, scissors])
+
+
+
+
+print(random.choice(game_choices))
