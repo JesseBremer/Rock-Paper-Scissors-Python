@@ -29,6 +29,7 @@ scissors = '''
 
 game_choices = []
 game_choices.extend([rock, paper, scissors])
+user_options = [0, 1, 2]
 
 user_score = 0
 cpu_score = 0
@@ -36,7 +37,20 @@ cpu_score = 0
 # Win Condition
 while user_score != 3 and cpu_score != 3:
     print(f"User Score: {user_score}. CPU score: {cpu_score}.")
-    user_selection = int(input("Choose your weapon: 0 - Rock, 1 - Paper, 2 - Scissors!\n"))
+
+    while True:
+        try:
+            user_selection = int(input("Choose your weapon: 0 - Rock, 1 - Paper, 2 - Scissors!\n"))
+            if user_selection in user_options:
+                break
+            else:
+                print("Invalid selection, try again.")
+
+        except ValueError:
+            print("Invalid selection, try again.")
+
+
+
     cpu_selection = random.choice(game_choices)
     cpu_selection_index = game_choices.index(cpu_selection)
 
